@@ -76,7 +76,8 @@ This webpage will always send latest scheduled query result in .csv format.
    <img width="1440" alt="for csv format" src="https://user-images.githubusercontent.com/40884871/43535154-d35bfbce-95d6-11e8-8299-f04085e97e3f.png">
 
  12. Now paste it into inside the function name fun_email() of  Sender_Email.py file in the variable name query_url
-     this query url will remain same even on changing query. By using this url you can always download latest result of running query.
+     this query url will remain same even on changing query. By using this url you can always download latest result of running query (scheduled query). 
+     
  13. Now run app.py file from commond prompt by typing python app.py
 
  14.Now flask server will be running at port no. 5001 .Now go to your browser and type
@@ -91,7 +92,10 @@ This webpage will always send latest scheduled query result in .csv format.
 
 
 
-16. I created a thread which will run in background and it will do communication with flask app to get the values of email ids and and scheduled time.
+16. I created a thread which will run in background and it will do communication with flask app to get the values of email ids and and scheduled time. Because we want to get email once in a day i used sleep() for 12 hours to stop thread exceution for 12 hours once all email are sent to corresponding email ids. 
+### If  you are scheduling email sending task multilple times in a day please remove sleep from line 49 of app.py (time.sleep(50000) ) or make it as a comment.
+
+In future we can improve we can improve efficiency of background running task by using redis queue. 
 
 <img width="1440" alt="screen shot 2018-08-02 at 8 07 33 pm" src="https://user-images.githubusercontent.com/40884871/43590992-f9e66bd0-968f-11e8-91de-5d29634df50a.png">
 
