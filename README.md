@@ -10,7 +10,7 @@ This webpage will always send latest scheduled query result in .csv format.
 ### Quick Setup For Redash
 1. First install docker on local 
 
-2. For Redash Repository and clone it on a local folder.
+2. Fork Redash Repository and clone it on a local folder.
 
 3.Go to redash folder by using - /redash
 
